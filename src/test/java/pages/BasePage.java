@@ -11,6 +11,7 @@ public class BasePage {
     public ChromeDriver driver;
 
     public BasePage(ChromeDriver driver) {
+
         this.driver = driver;
     }
 
