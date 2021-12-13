@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
-    //base
     public ChromeDriver driver;
 
     public BasePage(ChromeDriver driver) {
