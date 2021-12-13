@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class HomePage extends BasePage{
-//home
 
     private WebElement psiMenuItem;
     String homePageUrl = "https://www.pet-centar.rs/";

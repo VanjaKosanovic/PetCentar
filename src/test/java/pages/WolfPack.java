@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.ArrayList;
 
 public class WolfPack extends BasePage {
-//wolfpack
 
     public WolfPack(ChromeDriver driver) {
         super(driver);

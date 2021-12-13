@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Psi extends BasePage {
-//psi
 
     private WebElement hranaMenuItem;
 
