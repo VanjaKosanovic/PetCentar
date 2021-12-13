@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Hrana extends BasePage{
+//hrana
 
     WebElement robnaMarkaVidiSveButton;
 

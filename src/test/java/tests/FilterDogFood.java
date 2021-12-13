@@ -23,7 +23,7 @@ public class FilterDogFood {
         for (int i = 0; i<listaProizvoda.size(); i++){
             assert listaProizvoda.get(i).contains("WOLFPACK"): "This item is not Wolfpack";
         }
-        driver.quit();
+//        driver.quit();
 
 
     }
