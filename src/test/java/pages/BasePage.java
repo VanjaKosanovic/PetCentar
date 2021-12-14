@@ -14,6 +14,11 @@ public class BasePage {
         this.driver = driver;
     }
 
+    //accept cookies
+    public void acceptCookies () {
+        driver.findElementById("ctl53_Header1_CookiesEuBox_btnAcceptAll").click();
+    }
+
     public void waitUntilVisible (WebElement webElement, int timeOutInSeconds){
         WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
         wait.until(ExpectedConditions.visibilityOf(webElement));
@@ -34,6 +39,10 @@ public class BasePage {
 
     public void scrollIntoView(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public void addToCart (){
+        driver.findElementByXPath("//a[@class='btn btn--addToBasket']").click();
     }
 
     public void browserRefresh (){
