@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -11,7 +12,7 @@ public class Proizvodi extends BasePage{
 
     }
     public ArrayList<WebElement> getlistofProducts() {
-        ArrayList<WebElement> listOfProducts = new ArrayList<>(driver.findElementsByXPath("//section/article[contains (@class, 'product-item')]"));
+        ArrayList<WebElement> listOfProducts = new ArrayList<>(driver.findElementsByXPath("//section/article[contains (@class, 'product-item')]//h1"));
        return listOfProducts;
     }
     public ArrayList<String> getTitlesOfAllProducts() {
@@ -24,5 +25,17 @@ public class Proizvodi extends BasePage{
         return titles;
 
 
-}}
+
+}
+    public String getTitleofProduct(WebElement product){
+
+
+        return product.getText();
+
+
+
+    }
+
+
+}
 

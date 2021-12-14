@@ -1,10 +1,8 @@
 package tests;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.BasePage;
-import pages.Cart;
-import pages.HomePage;
-import pages.LoginPage;
+import pages.*;
 
 public abstract class BaseTest{
 
@@ -20,10 +18,12 @@ public abstract class BaseTest{
         page.searchInput.click();
     }
 
-    public void search (String item, ChromeDriver driver){
+    public Proizvodi search (String item, ChromeDriver driver){
         BasePage page = new BasePage(driver);
         page.searchInput.sendKeys(item);
-        clickSearchButton(driver);
+ //       page.waitUntilClickable(page.searchButton,2);
+        page.searchInput.sendKeys(Keys.ENTER);
+        return new Proizvodi(driver);
     }
 
     public Cart clickCartLogo (ChromeDriver driver){
