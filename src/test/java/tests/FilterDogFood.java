@@ -2,10 +2,7 @@ package tests;
 
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.HomePage;
-import pages.Hrana;
-import pages.Psi;
-import pages.WolfPack;
+import pages.*;
 
 import java.util.ArrayList;
 
@@ -15,6 +12,7 @@ public class FilterDogFood {
     public void testFilterDogFood (){
         ChromeDriver driver = new ChromeDriver();
         HomePage homePage = new HomePage(driver);
+        homePage.acceptCookies();
         Psi psi = homePage.clickOnthePsiMenuItem();
         Hrana hrana = psi.clickOnHranaMenuItem();
         hrana.clickOnRobnaMarkaVidiSveButton();
@@ -23,7 +21,7 @@ public class FilterDogFood {
         for (int i = 0; i<listaProizvoda.size(); i++){
             assert listaProizvoda.get(i).contains("WOLFPACK"): "This item is not Wolfpack";
         }
-//        driver.quit();
+        driver.quit();
 
 
     }

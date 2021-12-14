@@ -2,16 +2,18 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
 
-    private WebElement psiMenuItem;
     String homePageUrl = "https://www.pet-centar.rs/";
+
+    @FindBy (id = "ctl53_FilterHomepage1_RptFilters_ctl00_LnkFilterName")
+    private WebElement psiMenuItem;
 
     public HomePage (ChromeDriver driver){
         super(driver);
         driver.get(homePageUrl);
-        this.psiMenuItem = driver.findElementById("ctl53_FilterHomepage1_RptFilters_ctl00_LnkFilterName");
     }
 
    public Psi clickOnthePsiMenuItem (){

@@ -10,19 +10,8 @@ import pages.LoginPage;
 
 public class BaseTest extends BasePage{
 
-    private WebElement petCentarLogo;
-    private WebElement searchButton;
-    private WebElement searchInput;
-    private WebElement cartLogo;
-    private WebElement logInIcon;
-
     public BaseTest (ChromeDriver driver){
         super(driver);
-        this.petCentarLogo = driver.findElement(By.id("ctl53_Header1_Image1"));
-        this.searchButton = driver.findElement(By.id("ctl53_Header1_SearchBox1_BtnSearch"));
-        this.searchInput = driver.findElement(By.id("ctl53_Header1_SearchBox1_TbSearch"));
-        this.cartLogo = driver.findElement(By.id("ctl53_Header1_BasketSmall_LblBasketEmpty"));
-        this.logInIcon = driver.findElement(By.id("ctl53_Header1_hlLogin"));
     }
 
     public HomePage clickPetCentarLogo (){
