@@ -3,6 +3,8 @@ package tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 import pages.Cart;
 import pages.HomePage;
@@ -10,20 +12,25 @@ import pages.LoginPage;
 
 public class BaseTest extends BasePage{
 
+    @FindBy (id = "ctl53_Header1_Image1")
     private WebElement petCentarLogo;
+
+    @FindBy (id = "ctl53_Header1_SearchBox1_BtnSearch")
     private WebElement searchButton;
+
+    @FindBy (id = "ctl53_Header1_SearchBox1_TbSearch")
     private WebElement searchInput;
+
+    @FindBy (id = "ctl53_Header1_BasketSmall_LblBasketEmpty")
     private WebElement cartLogo;
+
+    @FindBy (id = "ctl53_Header1_hlLogin")
     private WebElement logInIcon;
 
     public BaseTest (ChromeDriver driver){
         super(driver);
-        this.petCentarLogo = driver.findElement(By.id("ctl53_Header1_Image1"));
-        this.searchButton = driver.findElement(By.id("ctl53_Header1_SearchBox1_BtnSearch"));
-        this.searchInput = driver.findElement(By.id("ctl53_Header1_SearchBox1_TbSearch"));
-        this.cartLogo = driver.findElement(By.id("ctl53_Header1_BasketSmall_LblBasketEmpty"));
-        this.logInIcon = driver.findElement(By.id("ctl53_Header1_hlLogin"));
     }
+
 
     public HomePage clickPetCentarLogo (){
         petCentarLogo.click();
@@ -35,7 +42,7 @@ public class BaseTest extends BasePage{
         searchInput.click();
     }
 
-    public void search (String item){
+    public void search (String item) {
         searchInput.sendKeys(item);
         clickSearchButton();
     }

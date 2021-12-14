@@ -8,17 +8,26 @@ import pages.*;
 
 import java.util.ArrayList;
 
-public class ItemsInFadeManuPsi {
+public class TestExercises {
 
-//    @Test
-//    public void clickOnTheChoosenTitle() {
-//        String title = "Hrana za pse";
-//        ChromeDriver driver = npseew ChromeDriver();
-//        HomePage homePage = new HomePage(driver);
-//        Hrana hrana = (Hrana) homePage.clickOnthePsiFadingManuItem(driver, title);
-//
-//    }
-//
+    @Test
+    public void addDehHranaItemToCart () throws InterruptedException {
+        ChromeDriver driver = new ChromeDriver();
+        HomePage homePage = new HomePage(driver);
+        homePage.acceptCookies();
+        Psi psi = homePage.clickOnthePsiMenuItem();
+        psi.clickOnCertainElement(driver, "Hrana", psi.getListPsiMenu());
+        Hrana hrana = new Hrana(driver);
+        hrana.clickOnCertainElement(driver, "Dehidrirana", hrana.getListHranaItems());
+        DehidriranaHrana dehidriranaHrana = new DehidriranaHrana(driver);
+        dehidriranaHrana.scrollIntoView(driver.findElementByXPath("//a[@id='ctl49_ProductList21_ProductList2Products1_LnkNext2']"));
+        dehidriranaHrana.clickOnCertainElement(driver, "ALLEVA EQUILIBRIUM", dehidriranaHrana.getProductsDehHranaPage1());
+        dehidriranaHrana.addToCart();
+        driver.quit();
+
+
+    }
+
 //    @Test
 //    public void hoverPsiMenuItem() throws InterruptedException {
 //        ChromeDriver driver = new ChromeDriver();
@@ -38,7 +47,8 @@ public class ItemsInFadeManuPsi {
         HomePage homePage = new HomePage(driver);
         homePage.acceptCookies();
         Psi psi = homePage.clickOnthePsiMenuItem();
-        psi.clickOntheChoosenPsiItem(driver, "Dodaci");
+        psi.clickOnCertainElement(driver, "Dodaci", psi.getListPsiMenu());
+        driver.quit();
                 }
 //                    Thread.sleep(5000);
 //                    Hrana hrana = new Hrana(driver);
@@ -62,20 +72,7 @@ public class ItemsInFadeManuPsi {
 //        return null;
 //    }
 
-    @Test
-    public void addDehHranaItemToCart () throws InterruptedException {
-        ChromeDriver driver = new ChromeDriver();
-        HomePage homePage = new HomePage(driver);
-        homePage.acceptCookies();
-        Psi psi = homePage.clickOnthePsiMenuItem();
-        psi.clickOntheChoosenPsiItem(driver, "Hrana");
-        Hrana hrana = new Hrana(driver);
-        hrana.clickOnTheChosenHranaZaPseItem(driver, "Dehidrirana");
-        DehidriranaHrana dehidriranaHrana = new DehidriranaHrana(driver);
-        dehidriranaHrana.clickOnProductDehHranaPage1(driver, "ALLEVA EQUILIBRIUM");
-        dehidriranaHrana.addToCart();
 
-    }
                 }
 
 

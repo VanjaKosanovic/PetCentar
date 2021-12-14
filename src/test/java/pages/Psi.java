@@ -29,25 +29,5 @@ public class Psi extends BasePage {
 
     }
 
-    public void clickOntheChoosenPsiItem (ChromeDriver driver, String item) {
-
-        ArrayList<String> titlesOfPsiManuItems = new ArrayList<>();
-
-        for (int i = 0; i < getListPsiMenu().size(); i++) {
-            String title = getListPsiMenu().get(i).getText();
-            titlesOfPsiManuItems.add(title);
-        }
-
-        for (int j = 0; j < titlesOfPsiManuItems.size(); j++) {
-            if (titlesOfPsiManuItems.get(j).contains(item)) {
-                WebElement chosenItem = getListPsiMenu().get(j);
-                chosenItem.click();
-                {
-                    break;
-                }
-            }
-        }
-    }
-
 
 }

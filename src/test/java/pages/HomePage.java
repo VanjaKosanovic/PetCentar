@@ -3,13 +3,13 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomePage extends BasePage {
 
-    private WebElement psiMenuItem;
 
     public List<WebElement> getPsiFadingManu() {
         return psiFadingManu;
@@ -18,19 +18,17 @@ public class HomePage extends BasePage {
     List<WebElement> psiFadingManu;
     String homePageUrl = "https://www.pet-centar.rs/";
 
+//    @FindBy (id = "ctl53_FilterHomepage1_RptFilters_ctl00_LnkFilterName")
+    private WebElement psiMenuItem;
+// neće da rade testovi sa ovim elementom kada definišem element sa anotacijom,
+// prestane da radi metoda sa elementom, a ne znam kako da je prepravim
 
-    //list that get all Psi fading manu items - 20 items
 
-
-    public WebElement getPsiMenuItem() {
-        return psiMenuItem;
-    }
-
-    public HomePage(ChromeDriver driver) {
+     public HomePage(ChromeDriver driver) {
         super(driver);
         driver.get(homePageUrl);
         this.psiMenuItem = driver.findElementById("ctl53_FilterHomepage1_RptFilters_ctl00_LnkFilterName");
-        this.psiFadingManu= driver.findElementsByXPath("//div[@class='filter-fade-menu']//a[contains (@id, 'ctl53_Header1_FilterHomepage1_RptFilters_ctl00_RptFilter')]");
+//        this.psiFadingManu= driver.findElementsByXPath("//div[@class='filter-fade-menu']//a[contains (@id, 'ctl53_Header1_FilterHomepage1_RptFilters_ctl00_RptFilter')]");
 
     }
 
