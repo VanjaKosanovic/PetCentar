@@ -10,7 +10,6 @@ public class Hrana extends BasePage{
    @FindBy (xpath =  "//a[@id='ctl50_Filter1_RptFilters_ctl01_LnkFilterName']/parent::div//li[@class='filter-nav__group__btn-more']")
    private WebElement robnaMarkaVidiSveButton;
 
-
     public Hrana (ChromeDriver driver){
         super(driver);
         //ova linija koda moze da se izbrise jer smo element definsali iznad konstruktora pomocu @FindBy anotacije

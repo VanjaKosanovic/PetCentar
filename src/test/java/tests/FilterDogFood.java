@@ -6,7 +6,7 @@ import pages.*;
 
 import java.util.ArrayList;
 
-public class FilterDogFood {
+public class FilterDogFood extends BaseTest{
 //test
     @Test
     public void testFilterDogFood (){
