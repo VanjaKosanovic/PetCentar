@@ -11,6 +11,7 @@ public class PretragaiDodavanjeUkorpu extends  BaseTest{
     @Test
     public void testPretragaiDodavanjeUkorpu(){
         ChromeDriver driver=new ChromeDriver();
+        driver.manage().window().maximize();
         HomePage homePage=new HomePage(driver);
         homePage.acceptCookies();
         Proizvodi proizvodi= search("igracke",driver);
