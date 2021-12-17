@@ -15,13 +15,19 @@ public class PretragaiDodavanjeUkorpu extends  BaseTest{
         homePage.acceptCookies();
         Proizvodi proizvodi= search("igracke",driver);
 
-
-        ArrayList<WebElement> listaProizvoda=proizvodi.getlistofProducts();
+        ArrayList <String> listaProizvoda= proizvodi.getTitlesOfAllProducts();
         for (int i = 0; i<listaProizvoda.size(); i++){
-            if (proizvodi.getTitleofProduct(listaProizvoda.get(i)).contains("KONG")){
-                listaProizvoda.get(i).click();
+            if (listaProizvoda.get(i).contains("KONG Igračka za pse AirDog")) {
+                proizvodi.getlistofProducts().get(i).click();
                 break;
             }
+            }
+//        ArrayList<WebElement> listaProizvoda=proizvodi.getlistofProducts();
+//        for (int i = 0; i<listaProizvoda.size(); i++){
+//            if (proizvodi.getTitleofProduct(listaProizvoda.get(i)).contains("KONG")){
+//                listaProizvoda.get(i).click();
+//                break;
+//            }
             Proizvod proizvod = new Proizvod(driver);
 
             Cart cart=proizvod.clickatToCartButton();
@@ -32,4 +38,4 @@ public class PretragaiDodavanjeUkorpu extends  BaseTest{
             }
 
 
-    }
+

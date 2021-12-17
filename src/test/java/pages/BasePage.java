@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+
 public class BasePage {
     public ChromeDriver driver;
 
@@ -65,4 +67,5 @@ public class BasePage {
         acceptCookiesButton.click();
     }
     }
+
 }
