@@ -6,9 +6,16 @@ import org.openqa.selenium.support.FindBy;
 
 public class Proizvod extends BasePage{
 
-    @FindBy(id = "ctl47_ProductDetails1_RptProductVariants_ctl01_BtnAdd2Basket")
-    private WebElement atToCardButton;
-    @FindBy(xpath = "//input[contains (@class, 'product-quantity__input)']")
+//    @FindBy(id = "ctl47_ProductDetails1_RptProductVariants_ctl01_BtnAdd2Basket")
+//    private WebElement addToCardButton;
+
+    //promenila sam lokator za element AddToCartButton,
+    // sada sadrži samo deo ID-a,
+    // da bi driver mogao da ga pronađe i u drugim slučajevima (za druge proizvode)
+    @FindBy(xpath = "//a[contains (@id, 'BtnAdd2Basket')]")
+    private WebElement addToCardButton;
+
+    @FindBy(xpath = "//input[contains (@class, 'product-quantity__input')]")
     private WebElement inputQuantity;
     @FindBy(xpath = "//a[contains (@class, 'product-quantity__plus)']")
     private WebElement plusQuantity;
@@ -18,8 +25,9 @@ public class Proizvod extends BasePage{
     public Proizvod(ChromeDriver driver){
         super(driver);
     }
-    public Cart clickatToCartButton(){
-        atToCardButton.click();
+
+    public Cart clickAddToCartButton(){
+        addToCardButton.click();
         return new Cart(driver);
     }
     public void enterQuantity(String quantity){

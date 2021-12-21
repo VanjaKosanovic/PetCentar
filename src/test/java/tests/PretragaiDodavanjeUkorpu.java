@@ -31,7 +31,7 @@ public class PretragaiDodavanjeUkorpu extends  BaseTest{
 //            }
             Proizvod proizvod = new Proizvod(driver);
 
-            Cart cart=proizvod.clickatToCartButton();
+            Cart cart=proizvod.clickAddToCartButton();
 
 
          }
