@@ -6,13 +6,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class Proizvod extends BasePage{
 
-    @FindBy(id = "ctl47_ProductDetails1_RptProductVariants_ctl01_BtnAdd2Basket")
+    @FindBy(xpath = "//a[contains (@class,'addToBasket')]")
     private WebElement atToCardButton;
-    @FindBy(xpath = "//input[contains (@class, 'product-quantity__input)']")
+    @FindBy(xpath = "//input[contains (@class, 'product-quantity__input')]")
     private WebElement inputQuantity;
-    @FindBy(xpath = "//a[contains (@class, 'product-quantity__plus)']")
+    @FindBy(xpath = "//a[contains (@class, 'product-quantity__plus')]")
     private WebElement plusQuantity;
-    @FindBy(xpath = "//a[contains (@class, 'product-quantity__minus)']")
+    @FindBy(xpath = "//a[contains (@class, 'product-quantity__minus')]")
     private WebElement minusQuantity;
 
     public Proizvod(ChromeDriver driver){

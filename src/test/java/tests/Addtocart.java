@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.Cart;
 import pages.HomePage;
 import pages.Proizvod;
 import pages.Proizvodi;
@@ -38,6 +39,23 @@ public class Addtocart {
         Proizvodi proizvodi = homePage.clickSeeAllButtonOnAction();
         ArrayList<WebElement> listaProizvodi = proizvodi.getlistofProducts();
         listaProizvodi.get(0).click();
+
+        Proizvod proizvod = new Proizvod(driver);
+        proizvod.enterQuantity("4");
+        Cart addToCart= proizvod.clickatToCartButton();
+        String singlePrice = addToCart.getSinglePrice();
+ //       StringBuffer sb= new StringBuffer(singlePrice);
+ //       sb.substring(0, sb.length()-2);
+        String lines[] = singlePrice.split("\n");
+
+        String s1 = lines[1];
+        String s = s1.substring(0,5);
+
+
+        double singlePriceint = Double.parseDouble(s);
+        double totalPriceint = singlePriceint*4.0;
+        String totalPrice = String.valueOf(totalPriceint);
+        assert (addToCart.getTotalPrice().contains(totalPrice)):"expected " + totalPrice + "but actual" + addToCart.getTotalPrice();
 
 
         driver.quit();
