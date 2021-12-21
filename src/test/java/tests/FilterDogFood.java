@@ -11,6 +11,7 @@ public class FilterDogFood extends BaseTest{
     @Test
     public void testFilterDogFood (){
         ChromeDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         HomePage homePage = new HomePage(driver);
         homePage.acceptCookies();
         Psi psi = homePage.clickOnthePsiMenuItem();

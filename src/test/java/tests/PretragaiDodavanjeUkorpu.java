@@ -14,7 +14,7 @@ public class PretragaiDodavanjeUkorpu extends  BaseTest{
         driver.manage().window().maximize();
         HomePage homePage=new HomePage(driver);
         homePage.acceptCookies();
-        Proizvodi proizvodi= search("igracke",driver);
+        Proizvodi proizvodi = search("igracke",driver);
 
         ArrayList <String> listaProizvoda= proizvodi.getTitlesOfAllProducts();
         for (int i = 0; i<listaProizvoda.size(); i++){

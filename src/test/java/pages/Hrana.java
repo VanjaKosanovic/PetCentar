@@ -25,6 +25,7 @@ public class Hrana extends BasePage{
     public WolfPack clickOnWolfPackRobnaMarka (){
         WebElement wolfPackRobnaMarka = driver.findElementByXPath("//a[contains(@title, 'WolfPack')]");
         scrollIntoView(wolfPackRobnaMarka);
+        waitUntilVisible(wolfPackRobnaMarka, 3);
         wolfPackRobnaMarka.click();
         return new WolfPack(driver);
     }
